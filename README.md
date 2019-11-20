@@ -1,0 +1,3 @@
+# CustomInput
+
+Пакет Swift для Xcode 11, который добавляет кастомный TextField  или SecureField. Построенное c помощью SwiftUI.
