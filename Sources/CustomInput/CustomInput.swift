@@ -1,6 +1,15 @@
+//
+//  CustomInput.swift
+//  CustomInput
+//
+//  Created by Дмитрий Лисин on 20.11.2019.
+//  Copyright © 2019 Дмитрий Лисин. All rights reserved.
+//
+
 import SwiftUI
 
-struct InputModifier : ViewModifier {
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
+public struct InputModifier : ViewModifier {
     
     func body(content: Content) -> some View {
         content
@@ -10,7 +19,7 @@ struct InputModifier : ViewModifier {
     }
 }
 
-struct CustomInput : View {
+public struct CustomInput : View {
     @Binding var text: String
     var name: String
     
