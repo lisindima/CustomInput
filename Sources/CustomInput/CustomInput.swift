@@ -11,7 +11,8 @@ import SwiftUI
 @available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
 public struct InputModifier : ViewModifier {
     
-    func body(content: Content) -> some View {
+    
+    public func body(content: Content) -> some View {
         content
             .padding()
             .overlay(RoundedRectangle(cornerRadius: 8).stroke(lineWidth: 1)
@@ -19,11 +20,18 @@ public struct InputModifier : ViewModifier {
     }
 }
 
+@available(iOS 13.0, tvOS 13.0, macOS 10.15, *)
 public struct CustomInput : View {
+        
     @Binding var text: String
     var name: String
     
-    var body: some View {
+    public init(text: Binding <String>, name: String) {
+        _text = text
+        self.name = name
+    }
+    
+    public var body: some View {
         TextField(name, text: $text)
             .modifier(InputModifier())
     }
